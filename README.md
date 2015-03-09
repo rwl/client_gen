@@ -1,6 +1,7 @@
 # Client generator
 
-Docker images for generating client libraries from discovery documents.
+[Docker][docker] [images][hub] for generating client [libraries][] from
+[discovery documents][discovery].
 
 ## Go example
 
@@ -15,3 +16,8 @@ generated client source code.
 Default working directory inside the image is `/client_gen`.
 
     $ docker run -v $(pwd):/client_gen -t rlincoln/client_gen:dart --no-prefix -i toyapi.v1.json -o ./dart
+
+[docker]: https://www.docker.com/
+[hub]: https://registry.hub.docker.com/u/rlincoln/client_gen/
+[libraries]: https://developers.google.com/discovery/libraries
+[discovery]: https://developers.google.com/discovery/v1/reference/apis

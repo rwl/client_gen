@@ -7,12 +7,15 @@ WORKDIR /app
 RUN pub get
 #ADD . /app
 #RUN pub get --offline
+#RUN ln -s /app/packages /app/bin/packages
 
 #RUN cp bin/generate.dart generate.dart
-#WORKDIR /app/bin
+WORKDIR /client_gen
+#ADD toyapi.v1.json /client_gen/
+#ADD toyapi.rpc.discovery /client_gen/
 
 CMD ["-h"]
-ENTRYPOINT ["/usr/bin/dart", "bin/generate.dart"]
+ENTRYPOINT ["/usr/bin/dart", "/app/bin/generate.dart"]
 
 
 #FROM debian:testing

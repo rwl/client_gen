@@ -5,7 +5,7 @@ RUN go get github.com/google/google-api-go-client/google-api-go-generator
 RUN go install github.com/google/google-api-go-client/google-api-go-generator
 #RUN ln -s /go/bin/google-api-go-generator /go/bin/gen
 
-WORKDIR /root
+WORKDIR /client_gen
 
 #RUN go get code.google.com/p/google-api-go-client/drive/v1
 #RUN cd $GOPATH/src/github.com/google/google-api-go-client

@@ -24,4 +24,8 @@ WORKDIR /root
 # googleAPIPkg = String, "googleapi_pkg", "google.golang.org/api/googleapi", "Go package path of the 'googleapi' support package."
 # contextPkg = String, "context_pkg", "golang.org/x/net/context", "Go package path of the 'context' support package."
 
-ENTRYPOINT /go/bin/google-api-go-generator -api_json_file api_json_file.json -gendir ./go
+#ENTRYPOINT /go/bin/google-api-go-generator -api_json_file api_json_file.json -gendir ./go
+ENTRYPOINT ["/go/bin/google-api-go-generator"]
+
+#CMD ["-api_json_file", "api_json_file.json", "-gendir", "./go"]
+CMD ["-help"]
